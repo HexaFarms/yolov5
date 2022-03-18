@@ -6,12 +6,12 @@ from loguru import logger
 
 """ Filter YOLO Dataset to use only relevant class """
 
-INPUT_LABEL_DIR = "/media/hexaburbach/onetb/yolo_data/coco/labels/train2017"
-OUTPUT_LABEL_DIR = "/media/hexaburbach/onetb/yolo_data/coco/labels/filtered_train"
-INPUT_IMG_DIR = "/media/hexaburbach/onetb/yolo_data/coco/images/train2017"
-OUTPUT_IMG_DIR = "/media/hexaburbach/onetb/yolo_data/coco/images/filtered_train"
-INTEREST_CLASS = [0, 58, 63, 67]  # Interested class in the original dataset
-MAPPING_CLASS = {0: 1, 58: 0, 63: 2, 67: 3}  # {index of original dataset : index of new dataset}
+INPUT_LABEL_DIR = "/media/hexaburbach/onetb/yolo_data/coco/labels/filtered_val"
+OUTPUT_LABEL_DIR = "/media/hexaburbach/onetb/yolo_data/coco/labels/person_plants_val"
+INPUT_IMG_DIR = "/media/hexaburbach/onetb/yolo_data/coco/images/filtered_val"
+OUTPUT_IMG_DIR = "/media/hexaburbach/onetb/yolo_data/coco/images/person_plants_val"
+INTEREST_CLASS = [0, 1] #, 63, 67]  # Interested class in the original dataset
+MAPPING_CLASS = {0: 0, 1: 1} #, 63: 2, 67: 3}  # {index of original dataset : index of new dataset}
 
 if __name__ == "__main__":
 

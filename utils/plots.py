@@ -117,6 +117,12 @@ class Annotator:
         # Return annotated image as array
         return np.asarray(self.im)
 
+    def warn(self):
+        # Give warning
+        (h, w) = self.im.shape[:-1]
+        cv2.rectangle(self.im, (100,100), (w-100, h-100), (0, 0, 255), thickness=10, lineType=cv2.LINE_AA)
+        cv2.putText(self.im, "Stop!", (w//2-200, h//2), 0, 5, (0, 0, 255), thickness=5, lineType=cv2.LINE_AA)
+
 
 def feature_visualization(x, module_type, stage, n=32, save_dir=Path('runs/detect/exp')):
     """
